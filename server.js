@@ -2,7 +2,7 @@ const http = require('http');
 const app = require('./app');
 const debug = require('debug')('backend:server');
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000; //define process.env.PORT at nodemon.json
 
 const server = http.createServer(app);
 

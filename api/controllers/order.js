@@ -119,8 +119,8 @@ exports.orders_place_user_order = (req, res, next) => {
                                 const transporter = nodemailer.createTransport({
                                     service: 'gmail',
                                     auth: {
-                                        user: '66kyrimar@gmail.com',
-                                        pass: process.env.MAIL_PASS
+                                        user: 'your@gmail.com',
+                                        pass: process.env.MAIL_PASS //define process.MAIL_PASS at nodemon.json
                                     }
                                 });
 
@@ -132,8 +132,8 @@ exports.orders_place_user_order = (req, res, next) => {
                                         '\t Quantity: ' + ord.products[i].quantity + '\n'
                                 }
                                 const mailOptions = {
-                                    from: '66kyrimar@gmail.com',
-                                    to: 'mantis.nk@gmail.com',  // user.email,
+                                    from: 'your@gmail.com',
+                                    to: user.mail,  // user.email,
                                     subject: 'Order Info',
                                     text: 'Order ID:  ' + ord._id +
                                         '\n Address: ' + adr.street + '' + adr.number +
@@ -178,8 +178,8 @@ exports.orders_place_user_order = (req, res, next) => {
                         const transporter = nodemailer.createTransport({
                             service: 'gmail',
                             auth: {
-                                user: '66kyrimar@gmail.com',
-                                pass: process.env.MAIL_PASS
+                                user: 'your@gmail.com',
+                                pass: process.env.MAIL_PASS //define process.MAIL_PASS at nodemon.json
                             }
                         });
 
@@ -191,8 +191,8 @@ exports.orders_place_user_order = (req, res, next) => {
                                 '\t Quantity: ' + ord.products[i].quantity + '\n'
                         }
                         const mailOptions = {
-                            from: '66kyrimar@gmail.com',
-                            to: 'mantis.nk@gmail.com',  // user.email,
+                            from: 'your@gmail.com',
+                            to: user.mail,  // user.email,
                             subject: 'Order Info',
                             text: 'Order ID:  ' + ord._id +
                                 '\n Full Name: ' + user.firstname + '' + user.lastname + '\n' +
@@ -267,8 +267,8 @@ exports.orders_place_guest_order = (req, res, next) => {
                 const transporter = nodemailer.createTransport({
                     service: 'gmail',
                     auth: {
-                        user: '66kyrimar@gmail.com',
-                        pass: process.env.MAIL_PASS
+                        user: 'your@gmail.com',
+                        pass: process.env.MAIL_PASS //define process.MAIL_PASS at nodemon.json
                     }
                 });
 
@@ -280,8 +280,8 @@ exports.orders_place_guest_order = (req, res, next) => {
                         '\t Quantity: ' + ord.products[i].quantity + '\n'
                 }
                 const mailOptions = {
-                    from: '66kyrimar@gmail.com',
-                    to: 'mantis.nk@gmail.com',  // user.email,
+                    from: 'your@gmail.com',
+                    to: ord.guestmail,  // user.email,
                     subject: 'Order Info',
                     text: 'Order ID:  ' + ord._id +
                         '\n Address: ' + ord.adress.street + '' + ord.adress.number +
@@ -321,8 +321,8 @@ exports.orders_place_guest_order = (req, res, next) => {
                 const transporter = nodemailer.createTransport({
                     service: 'gmail',
                     auth: {
-                        user: '66kyrimar@gmail.com',
-                        pass: process.env.MAIL_PASS
+                        user: 'your@gmail.com',
+                        pass: process.env.MAIL_PASS //define process.MAIL_PASS at nodemon.json
                     }
                 });
 
@@ -334,8 +334,8 @@ exports.orders_place_guest_order = (req, res, next) => {
                         '\t Quantity: ' + ord.products[i].quantity + '\n'
                 }
                 const mailOptions = {
-                    from: '66kyrimar@gmail.com',
-                    to: 'mantis.nk@gmail.com',  // user.email,
+                    from: 'your@gmail.com',
+                    to: ord.guestemail,  // user.email,
                     subject: 'Order Info',
                     text: 'Order ID:  ' + ord._id +
                         '\n Full Name: ' + ord.guestFname + '' + ord.guestLname + '\n' +

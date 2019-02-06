@@ -10,7 +10,7 @@ const addressRoutes= require('./api/routes/addresses');
 const productRoutes= require('./api/routes/products');
 const orderRoutes= require('./api/routes/orders');
 
-mongoose.connect('mongodb://localhost:27017/shop')
+mongoose.connect('mongodb://localhost:27017/shop')  // your MongoDB url/collection here.
 
 mongoose.connection.on("error", function(err) {
     console.log("Could not connect to mongo server!");

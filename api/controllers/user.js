@@ -65,14 +65,14 @@ exports.user_signup = (req, res, next) => {
                 const transporter = nodemailer.createTransport({
                   service: 'gmail',
                   auth: {
-                    user: '66kyrimar@gmail.com',
-                    pass: process.env.MAIL_PASS
+                    user: 'your@gmail.com',
+                    pass: process.env.MAIL_PASS //define process.MAIL_PASS at nodemon.json
                   }
                 });
 
                 const mailOptions = {
-                  from: '66kyrimar@gmail.com',
-                  to: 'mantis.nk@gmail.com',  // user.email,
+                  from: 'your@gmail.com',
+                  to: user.email,  // user.email,
                   subject: 'Account Verification',
                   text: 'Hello, \n\n' + 'Please verify your account by clicking the link below: \n\n'
                     + 'http://localhost:4200/login;vtok=' + token.token
@@ -105,7 +105,7 @@ exports.user_signup = (req, res, next) => {
 
 exports.user_login = (req, res, next) => {
   const mail = req.body.email;
-  if (mail == process.env.MAIL_ADMIN) {
+  if (mail == process.env.MAIL_ADMIN) {  //define process.MAIL_ADMIN at nodemon.json
     User.find({ email: mail })
       .exec()
       .then(admin => {
@@ -121,7 +121,7 @@ exports.user_login = (req, res, next) => {
               date: Date.now(),
               role: '_admin0'
             },
-              process.env.JWT_KEY,
+              process.env.JWT_KEY,  //define process.JWT_KEY at nodemon.json
               {
                 expiresIn: '24h'
               });
@@ -160,7 +160,7 @@ exports.user_login = (req, res, next) => {
             userId: user[0]._id,
             date: Date.now()
           },
-            process.env.JWT_KEY,
+            process.env.JWT_KEY,  //define process.JWT_KEY at nodemon.json
             {
               expiresIn: '24h'
             });

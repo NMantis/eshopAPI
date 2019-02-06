@@ -31,7 +31,6 @@ const upload = multer({
 router.post('/image', function(req, res, next){
     upload(req, res, function(err) {
         if(err) {
-            console.log(err);
             return res.status(500).json({error: err});
             
         }
@@ -52,7 +51,5 @@ router.post("/", checkAuth, ProductController.products_add_product);
 router.patch('/:productId',checkAuth, ProductController.products_update_product);
 
 router.delete("/:productId",checkAuth, ProductController.products_delete_product);
-
-
 
 module.exports = router;
