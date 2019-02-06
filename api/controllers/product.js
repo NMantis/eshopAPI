@@ -15,7 +15,8 @@ exports.products_get_all = (req, res, next) => {
                     category: doc.category,
                     productImage: doc.productImage,
                     active: doc.active,
-                    description: doc.description
+                    description: doc.description,
+                    stock: doc.stock
                 };
             })
         };
@@ -76,9 +77,10 @@ exports.products_add_product = (req, res, next) => {
         name: req.body.name,
         description: req.body.description,
         price: req.body.price,
-        productImage: req.body.productImage,
+        productImage: req.body.path,
         active: true,
-        category: req.body.category
+        category: req.body.category,
+        stock: req.body.stock
     });
 
     product.save()
@@ -91,7 +93,8 @@ exports.products_add_product = (req, res, next) => {
                 _id: result._id,
                 price: result.price,
                 productImage: result.productImage,
-                category: result.category
+                category: result.category,
+                stock: result.stock
             }
         });
     })
@@ -136,3 +139,4 @@ exports.products_delete_product = (req, res, next) => {
         });
     });
 };
+

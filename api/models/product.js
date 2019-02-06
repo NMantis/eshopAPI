@@ -7,8 +7,9 @@ const productSchema = mongoose.Schema({
     category: {type: String, required: true },
     description: {type: String},
     active: {type: Boolean, default: true},
+    quantity: { type: Number, default: 1},
     productImage: {type: String, default: '../../../assets/images/shoe.jpg'},
-    quantity: { type: Number, default: 1}
+    stock: {type: Number, default: 1}
 },
 {collection: 'products'});
 

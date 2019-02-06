@@ -82,18 +82,19 @@ exports.user_signup = (req, res, next) => {
                   if (err) {
                     res.status(500).json({ error: err });
                   }
-                  console.log(info);
+                  res.status(200).json(info);
                 })
               })
               .catch(err => {
-                console.log(err);
+                res.status(500).json({
+                  error: err
+                });
               });
           }
         });
       }
     })
     .catch(err => {
-      console.log(err);
       res.status(500).json({
         error: err
       });
