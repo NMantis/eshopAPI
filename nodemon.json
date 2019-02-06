@@ -1,8 +1,8 @@
 {
     "env": {
         "MONGO_ATLAS_PW": "restapi",
-        "JWT_KEY": "rX*jBvZs,anWlcN`kbwli[pu'^Mzss5WktJm|DX;gw%=$Q;aPMs,+:VnVM646",
-        "MAIL_PASS": "55tashkent",
-        "MAIL_ADMIN": "mantis.nk@gmail.com"
+        "JWT_KEY": "",
+        "MAIL_PASS": "",
+        "MAIL_ADMIN": "" 
     }
 }
